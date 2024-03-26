@@ -1,24 +1,30 @@
 package dev.shiva.BookMyShow.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.engine.jdbc.env.internal.LobCreationLogging;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@MappedSuperclass
 
-public class BaseModel {
+public abstract class BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private int id;
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "UPDATED_AT")
+    private LocalDateTime updatedAt;
+    @Column(name = "CREATED_BY")
+    private String createdBy;
+    @Column(name = "UPDATED_BY")
+    private String updatedBy;
+
 
 
 }
