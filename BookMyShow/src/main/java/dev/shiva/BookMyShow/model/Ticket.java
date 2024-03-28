@@ -1,13 +1,16 @@
 package dev.shiva.BookMyShow.model;
 
 import dev.shiva.BookMyShow.model.constatnt.TicketStatus;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+@Getter
+@Setter
+@Entity
 
 public class Ticket extends BaseModel{
     private LocalDateTime timeOfBooking;

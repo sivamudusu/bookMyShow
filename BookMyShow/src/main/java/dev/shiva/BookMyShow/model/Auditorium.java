@@ -1,12 +1,14 @@
 package dev.shiva.BookMyShow.model;
 
 import dev.shiva.BookMyShow.model.constatnt.AuditoriumFeature;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
+@Getter
+@Setter
+@Entity
 
 public class Auditorium extends BaseModel{
     private String name;
