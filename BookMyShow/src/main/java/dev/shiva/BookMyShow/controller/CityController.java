@@ -31,6 +31,13 @@ public class CityController {
         }
 
     }
+    @GetMapping("/city/{name}")
+    public ResponseEntity getCityByName(@PathVariable("name")String name){
+        City city = cityService.getCityByName(name);
+        return ResponseEntity.ok(
+                city
+        );
+    }
 
 
     @DeleteMapping("/city/{id}")

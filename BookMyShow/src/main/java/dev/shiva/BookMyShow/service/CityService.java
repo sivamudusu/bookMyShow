@@ -16,6 +16,15 @@ public class CityService {
         city.setName(name);
         return cityRepository.save(city);
     }
+    public City saveCity(City city){
+        return cityRepository.save(city);
+    }
+    public City getCityByName(String name){
+        return cityRepository.findByName(name);
+    }
+    public City getCityById(int cityId){
+        return cityRepository.findById(cityId).get();
+    }
 
     public boolean deleteCity(int id){
         cityRepository.deleteById(id);
